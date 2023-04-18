@@ -1,0 +1,90 @@
+version: '3.3'  # version of compose format
+
+services:
+  landing:
+    build: ./landing  # path is relative to docker-compose.yml location
+    #hostname: landing-service
+    ports:
+      - 5050:5050  # host:container
+    # networks:
+    #   sample:
+    #     aliases:
+    #       - landing-service
+    depends_on:
+      - addition
+      - division
+      - multiplication
+      - subtraction
+      - gcd
+      - lcm
+      - modulus
+      - exponent
+      - lsthan
+      - gtthan
+      - equal
+  # Add more services below
+  addition:
+    build: ./addition
+    #host-name: addition-service
+    ports:
+      - 5051:5050
+
+  division:
+    build: ./division
+    #host-name: division-service
+    ports:
+      - 5052:5050
+
+  multiplication:
+    build: ./multiplication
+    #host-name: multiplication-service
+    ports:
+      - 5053:5050
+
+  subtraction:
+    build: ./subtraction
+    #host-name: subtraction-service
+    ports:
+      - 5054:5050
+
+  gcd:
+    build: ./gcd
+    #host-name: gcd-service
+    ports:
+      - 5055:5050
+
+  lcm:
+    build: ./lcm
+    #host-name: lcm-service
+    ports:
+      - 5056:5050
+
+  modulus:
+    build: ./modulus
+    #host-name: modulus-service
+    ports:
+      - 5057:5050
+  
+  exponent:
+    build: ./exponent
+    #host-name: exponent-service
+    ports:
+      - 5058:5050
+
+  gtthan:
+    build: ./greaterthan
+    #host-name: gtthan-service
+    ports:
+      - 5059:5050
+
+  lsthan:
+    build: ./lesserthan
+    #host-name: lsthan-service
+    ports:
+      - 5060:5050
+
+  equal:
+    build: ./equal
+    #host-name: equal-service
+    ports:
+      - 5061:5050
